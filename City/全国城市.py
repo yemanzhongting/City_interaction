@@ -65,7 +65,7 @@ cities=[]
 names=[]
 for i in Acities[1:]:
     cities.append(i.split(',')[0])
-    names.append(i.split(',')[1])
+    names.append(i.split(',')[1].replace('\r\n',''))
 
 print len(cities)
 print cities

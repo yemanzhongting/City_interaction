@@ -19,7 +19,7 @@ path="F:\\2017\\2017"
 path2="F:\\2016\\2016"
 path3="F:\\2014"
 
-files = os.listdir(path3)
+files = os.listdir(path)
 
 for filename in files:
     print(filename)
@@ -59,13 +59,13 @@ CITY_LIST=[]
 import codecs
 print folders
 #with codecs.open('ChinaAll.csv','w','utf-8') as fh:
-with codecs.open('city14.txt','r','utf-8') as f:
+with codecs.open('city17.txt','r','utf-8') as f:
     Acities=f.readlines()
 cities=[]
 names=[]
 for i in Acities[1:]:
     cities.append(i.split(',')[0])
-    names.append(i.split(',')[1])
+    names.append(i.split(',')[1].replace('\r\n',''))
 
 print len(cities)
 print cities
@@ -121,7 +121,7 @@ for city in cities:
 
     index=index+1
 
-    with codecs.open(str(city)+'2014newpois.csv', 'w', 'utf-8') as fh:
+    with codecs.open(str(city)+'2017newpois.csv', 'w', 'utf-8') as fh:
     # with open(city+'2014pois.csv','w') as f:
         for i in range(0, len(CATEGORY)):
             for j in result:
